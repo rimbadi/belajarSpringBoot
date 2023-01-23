@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous"
+  />
+</head>
+<body>
+<div class="container">
+  <form th:action="@{/project/save}" method="post">
+    <div class="form-group" hidden>
+      <label for="Id" class="col-form-label">ID</label>
+      <input
+              type="text"
+              class="form-control"
+              id="id"
+              th:field=""
+      />
+    </div>
+    <div class="form-group col-md-4">
+      <label for="Username" class="col-form-label">Projects Name</label>
+      <input
+              type="text"
+              class="form-control"
+              id="username"
+              th:field=""
+      />
+    </div>
+
+    <div class="form-group col-md-4">
+      <label for="Tech" class="col-form-label">Technology</label>
+      <input
+              type="type"
+              class="form-control"
+              id="tech"
+              th:field="*{projects.tech}"
+      />
+    </div>
+
+    <div class="form-group col-md-4">
+      <label for="Description" class="dol-form-label">Description</label>
+      <input type="text"
+      class="form-control"
+      id="description"
+      th:field="*{projects.description">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+</body>
+</html>
